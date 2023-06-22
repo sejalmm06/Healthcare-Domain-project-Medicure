@@ -47,8 +47,9 @@ stage('Run On Test Server') {
         ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', playbook: 'test-server-playbook.yml', inventory: 'hosts'
         
     }
-
-    stage('Run on Prod Server') {
+    
+node('172.31.13.114 (kubernetes-master)'){
+  stage('Run on Prod Server') {
       sh "kubectl apply -f deployment.yml"
       sh "kubectl apply -f service.yml"
       sh "kubectl get pods"
