@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medicure-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: medicure
+  template:
+    metadata:
+      labels:
+        app: medicure
+    spec:
+      containers:
+        - name: medicure
+          image: sejalmm06/medicure:latest
+          ports:
+            - containerPort: 8082
