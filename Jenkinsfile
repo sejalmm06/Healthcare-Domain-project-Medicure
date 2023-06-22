@@ -50,7 +50,7 @@ stage('Run On Test Server') {
     
  node('172.31.13.114 (kubernetes-master)') {
         stage('Checkout Git Repository') {
-            git branch: 'master', url: 'https://github.com/your-repo.git'
+            git branch: 'master', url: 'https://github.com/sejalmm06/Healthcare-Domain-project-Medicure.git'
         }
 
         stage('Run on Prod Server') {
