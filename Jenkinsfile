@@ -59,7 +59,6 @@ stage('Run On Test Server') {
             sh "sudo kubectl get pods"
             sh "sudo kubectl get deployments"
             sh "sudo kubectl get services"
-            sh "sudo kubectl get replica sets"
             echo "Deployment and service applied successfully"
         }
     }
