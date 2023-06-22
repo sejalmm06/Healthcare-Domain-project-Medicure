@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: medicure-service
+spec:
+  selector:
+    app: medicure
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+      nodePort: 30080
+  type: NodePort
