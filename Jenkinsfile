@@ -44,7 +44,7 @@ node {
     }
         
 stage('Run On Test Server') {
-        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', playbook: 'test-server-playbook.yml', inventory: 'hosts'
+        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', playbook: 'ansible-playbook.yml', inventory: 'hosts'
         
     }
     
