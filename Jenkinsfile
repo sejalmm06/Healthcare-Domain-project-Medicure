@@ -51,10 +51,10 @@ stage('Run On Test Server') {
 node('172.31.13.114 (kubernetes-master)'){
   stage('Run on Prod Server') {
     sh """
-kubectl get pods 
-kubectl delete deployment kubernetes-bootcamp | true
-kubectl create deployment kubernetes-bootcamp --image=dockerio/sejalmm06/medicure:latest --port=8082
-kubectl get pods 
+sudo kubectl get pods 
+sudo kubectl delete deployment kubernetes-bootcamp | true
+sudo kubectl create deployment kubernetes-bootcamp --image=dockerio/sejalmm06/medicure:latest --port=8082
+sudo kubectl get pods 
 """
 
     }
