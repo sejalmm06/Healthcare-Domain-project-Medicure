@@ -50,8 +50,8 @@ stage('Run On Test Server') {
     
 node('172.31.13.114 (kubernetes-master)'){
   stage('Run on Prod Server') {
-     sh "sudo kubectl apply -f /var/lib/jenkins/workspace/medicure/deployment.yml"
-     sh "sudo kubectl apply -f /var/lib/jenkins/workspace/medicure/service.yml"
+     sh "sudo kubectl apply -f deployment.yml"
+     sh "sudo kubectl apply -f service.yml"
      sh "sudo kubectl get pods"
      sh "sudo kubectl get deployments"
      sh "sudo kubectl get services"
