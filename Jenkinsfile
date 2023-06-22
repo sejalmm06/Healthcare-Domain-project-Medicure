@@ -59,3 +59,4 @@ node('172.31.13.114 (kubernetes-master)'){
       echo "Deployment and service applied successfully"
     }
 }
+}
