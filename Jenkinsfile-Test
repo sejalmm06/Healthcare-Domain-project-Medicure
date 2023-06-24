@@ -1,0 +1,10 @@
+node {
+    stage('Checkout') {
+       git branch: 'master', url: 'https://github.com/sejalmm06/Healthcare-Domain-project-Medicure.git'
+    }
+    
+    stage('Selenium Test') {
+        sleep(time: 80, unit: 'SECONDS') 
+        sh 'sudo java -jar medicure-selenium-runnable-jar.jar'
+    }
+}
