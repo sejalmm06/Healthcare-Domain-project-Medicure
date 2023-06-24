@@ -1,0 +1,14 @@
+node('172.31.13.114 (kubernetes-master)') {
+    stage('Checkout Git Repository') {
+        git branch: 'master', url: 'https://github.com/sejalmm06/Healthcare-Domain-project-Medicure.git'
+    }
+
+    stage('Run on Prod Server') {
+        sh "sudo kubectl apply -f deployment.yml"
+        sh "sudo kubectl apply -f service.yml"
+        sh "sudo kubectl get pods"
+        sh "sudo kubectl get deployments"
+        sh "sudo kubectl get services"
+        echo "Deployment and service applied successfully"
+    }
+}
